@@ -1,0 +1,38 @@
+body {
+    font-family: "Roboto Mono", monospace;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    background-color: white;
+    list-style: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 3px;
+}
+
+.keyboard {
+    background-color: rgb(202, 204, 206);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 3px;
+    padding: 4rem;
+}
+
+.first-row {
+    display: flex;
+    justify-content: center;
+    flex: 1 1 0%;
+}
+
+.function-keys, .first-row-other {
+    display: flex;
+}
+
