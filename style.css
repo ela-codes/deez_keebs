@@ -51,11 +51,19 @@ span {
 .medium-size {
     width: 84px;
 }
-/* .pressed {
-    background-color: green;
 
-} */
+.keyUp {
+    background-color: lightgreen;
+}
 
+.keyDown {
+    
+}
+span:active {
+    background-color: white;
+    box-shadow: 0 2px 2px #666;
+    transform: translateY(4px);
+}
 .container {
     /* border: 1px solid; */
     border-color: blue;
