@@ -7,7 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #212222;
+  /* background-color: #212222; */
 }
 
 .page {
@@ -23,6 +23,24 @@ body {
   text-align: center;
   font-size: 20px;
   background-color: rgb(175, 176, 236);
+}
+
+.keyboardAccess {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 10px;
+  width: 300px;
+}
+
+#requestButton {
+  display: flex;
+  align-self: center;
+}
+
+.keyboardName {
+  font-size: 20px;
 }
 
 .keyboard {

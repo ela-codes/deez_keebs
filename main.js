@@ -37,7 +37,6 @@ function highlightKey(e) {
 function completeKeyDown(e) {
   let key = document.querySelector(`.${e.code}`)
   key.classList.add("keyDownStyle")
-  console.log(key)
 }
 
 
@@ -51,7 +50,31 @@ function completeKeyUp(e) {
 function preventDefaults(e) {
   window.addEventListener("keydown", function(e) {
     if (lockedKeys.includes(e.code)) {
-      e.preventDefault()
+      e.preventDefault();
     }
   });
 }
+
+
+
+document.getElementById('requestButton').addEventListener('click', function() {
+  // Request access to a USB device
+  navigator.usb.requestDevice({ filters: [{ 
+    classCode: 3, 
+    subclassCode: 1, 
+    protocolCode: 1 
+    }] 
+  }).then(device => {
+      console.log('Device:', device);
+      // Access device descriptors, configurations, etc.
+      console.log('Manufacturer:', device.manufacturerName);
+      let keyboardName = document.querySelector(".keyboardName")
+      keyboardName.innerHTML = `Current Keyboard: ${device.productName}`
+      console.log('Product:', device.productName);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+});
+
+
