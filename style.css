@@ -1,4 +1,5 @@
 :root {
+  --keywidth: 52px;
   --keyheight: 55px;
 }
 
@@ -9,16 +10,12 @@ body {
   padding: 0;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* background-color: #212222; */
 }
 
 .page {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 1;
 }
 
 .header,
@@ -47,15 +44,6 @@ body {
   font-size: 20px;
 }
 
-.keyboard {
-  column-gap: 10px;
-  /* border: 1px solid;
-	border-radius: 3px; */
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-}
-
 .key {
   background-color: white;
   border-width: 1px;
@@ -64,10 +52,7 @@ body {
   margin: 1px;
   transition: transform 0.1s ease-in-out;
   pointer-events: none;
-}
-
-span {
-  width: 50px;
+  width: var(--keywidth);
   height: var(--keyheight);
 }
 
@@ -76,11 +61,11 @@ span {
 }
 
 .medium-modifier {
-  width: 90px;
+  width: 94px;
 }
 
 .medium1-modifier {
-  width: 98px;
+  width: 100px;
 }
 
 .medium2-modifier {
@@ -92,7 +77,7 @@ span {
 }
 
 .small-modifier {
-  width: 67px;
+  width: 70px;
 }
 
 
@@ -114,20 +99,30 @@ span:active {
   box-shadow: 0 2px 2px #666;
   transform: translateY(4px);
 }
+
+
+.keyboard {
+  border: 1px dashed white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  grid-template-columns: 830px min-content min-content;
+  justify-content: center;
+}
+
 .container {
-  /* border: 1px solid; */
-  border-color: blue;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: repeat(6, min-content);
+  border: 1px dashed white;
 }
 
 .container > div {
-  /* border: 1px solid; */
   display: flex;
 }
 
-.first-row {
-  padding-bottom: 15px;
-}
-
+/* .F1,
+.F5,
+.F9 {
+  margin-left: 25px;
+} */
 
