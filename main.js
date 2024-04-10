@@ -12,6 +12,18 @@ const lockedKeys = [
   "F10",
   "F11",
   "F12",
+  "Tab",
+  "CapsLock",
+  "Backspace",
+  "PrintScreen", // OS functionality so can't be prevented
+  "ScrollLock",
+  "Pause",
+  "Insert",
+  "Home",
+  "PageUp",
+  "Delete",
+  "End",
+  "PageDown",
 ];
 
 // EVENT LISTENERS

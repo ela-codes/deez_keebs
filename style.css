@@ -1,3 +1,7 @@
+:root {
+  --keyheight: 55px;
+}
+
 body {
   font-family: "Roboto Mono", monospace;
   font-size: 12px;
@@ -15,13 +19,13 @@ body {
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  border: 1px solid;
 }
 
 .header,
 .footer {
   text-align: center;
   font-size: 20px;
+  width: 100vw;
   background-color: rgb(175, 176, 236);
 }
 
@@ -58,25 +62,46 @@ body {
   border-style: solid;
   border-radius: 2px;
   margin: 1px;
-  text-align: center;
   transition: transform 0.1s ease-in-out;
+  pointer-events: none;
 }
 
 span {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: var(--keyheight);
 }
 
-.medium-size {
-  width: 84px;
+.large-modifier {
+  width: 335px;
 }
+
+.medium-modifier {
+  width: 90px;
+}
+
+.medium1-modifier {
+  width: 98px;
+}
+
+.medium2-modifier {
+  width: 110px;
+}
+
+.medium3-modifier {
+  width: 130px;
+}
+
+.small-modifier {
+  width: 67px;
+}
+
 
 .highlightKey {
   background-color: lightgreen;
 }
 
 .keyDownStyle {
-  transform: scale(0.93);
+  transform: scale(0.95);
 }
 
 .keyUpStlye {
@@ -96,22 +121,13 @@ span:active {
   flex-direction: column;
 }
 
-.first-row,
-.sec-row {
+.container > div {
   /* border: 1px solid; */
   display: flex;
 }
 
-.func-container {
-  display: flex;
+.first-row {
+  padding-bottom: 15px;
 }
 
-.esc {
-  margin-right: 49px;
-}
-.f4 {
-  margin-right: 21px;
-}
-.f8 {
-  margin-right: 21px;
-}
+
