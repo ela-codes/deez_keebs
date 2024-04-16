@@ -218,3 +218,6 @@ span:active {
   width: calc(var(--keywidth) * 2 + 5px);
 }
 
+a {
+  color: rgb(129, 108, 111);
+}
