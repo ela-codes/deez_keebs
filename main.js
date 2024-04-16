@@ -27,6 +27,8 @@ const lockedKeys = [
   "NumLock"
 ];
 
+let keyPressCounter = 0;
+
 // EVENT LISTENERS
 const keys = document.querySelectorAll(".key");
 document.addEventListener("keydown", (e) => {
@@ -37,6 +39,7 @@ document.addEventListener("keydown", (e) => {
 
 document.addEventListener("keyup", (e) => {
   completeKeyUp(e)
+  keyPressCounter = updateKeyPressCounter(keyPressCounter)
 });
 
 
@@ -59,13 +62,20 @@ function completeKeyUp(e) {
   key.classList.add("keyUpStyle")
 }
 
-// stops function keys from being activated
-function preventDefaults(e) {
+
+function preventDefaults(e) { // stops function keys from activating
   window.addEventListener("keydown", function(e) {
     if (lockedKeys.includes(e.code)) {
       e.preventDefault();
     }
   });
+}
+
+function updateKeyPressCounter(keyPressCounter) {
+  keyPressCounter++
+  const counterElement = document.querySelector('.keyPressCounter')
+  counterElement.innerHTML = `Key press counter: ${keyPressCounter}`
+  return keyPressCounter
 }
 
 
@@ -89,5 +99,4 @@ document.getElementById('requestButton').addEventListener('click', function() {
       console.error('Error:', error);
     });
 });
-
 
