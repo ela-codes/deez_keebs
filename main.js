@@ -24,6 +24,7 @@ const lockedKeys = [
   "Delete",
   "End",
   "PageDown",
+  "NumLock"
 ];
 
 // EVENT LISTENERS

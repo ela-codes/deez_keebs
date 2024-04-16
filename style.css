@@ -1,6 +1,8 @@
 :root {
   --keywidth: 52px;
   --keyheight: 55px;
+  --keyrowgap: 5px;
+  --keycolumngap: 2px;
 }
 
 body {
@@ -45,15 +47,17 @@ body {
 }
 
 .key {
+  font-size: 14px;
   background-color: white;
   border-width: 1px;
   border-style: solid;
   border-radius: 2px;
-  margin: 1px;
+  margin: 2px;
   transition: transform 0.1s ease-in-out;
   pointer-events: none;
   width: var(--keywidth);
   height: var(--keyheight);
+  text-align: center;
 }
 
 .large-modifier {
@@ -61,25 +65,28 @@ body {
 }
 
 .medium-modifier {
-  width: 94px;
+  width: 112px;
 }
 
 .medium1-modifier {
-  width: 100px;
-}
-
-.medium2-modifier {
   width: 110px;
 }
 
-.medium3-modifier {
+.medium2-modifier {
   width: 130px;
 }
 
-.small-modifier {
-  width: 70px;
+.medium3-modifier {
+  width: 150px;
 }
 
+.small-modifier {
+  width: 82px;
+}
+
+.small1-modifier {
+  width: 85px;
+}
 
 .highlightKey {
   background-color: lightgreen;
@@ -104,15 +111,15 @@ span:active {
 .keyboard {
   border: 1px dashed white;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, min-content);
   column-gap: 10px;
-  grid-template-columns: 830px min-content min-content;
   justify-content: center;
 }
 
 .container {
   display: grid;
-  grid-template-rows: repeat(6, min-content);
+  grid-template-rows: repeat(6, var(--keyheight));
+  row-gap: var(--keyrowgap);
   border: 1px dashed white;
 }
 
@@ -120,9 +127,39 @@ span:active {
   display: flex;
 }
 
-/* .F1,
+
+.F1,
 .F5,
 .F9 {
-  margin-left: 25px;
-} */
+  margin-left: calc(var(--keywidth) - 11px);
+}
+
+.fifth-row {
+  grid-row: 5 / 6;
+  display: flex;
+  justify-content: center;
+}
+
+.ArrowUp {
+  grid-column: 2 / 3;
+}
+
+.sixth-row {
+  grid-row: 6 / 7;
+}
+
+.NumpadAdd {
+  height: calc(var(--keyheight)*2 + var(--keyrowgap));
+  grid-row: 2 / 4;
+}
+
+.NumpadEnter {
+  height: calc(var(--keyheight)*2 + var(--keyrowgap));
+  grid-row: 5 / 7;
+}
+
+
+.Numpad0 {
+  width: calc(var(--keywidth) * 2 + 5px);
+}
 
