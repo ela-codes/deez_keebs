@@ -166,7 +166,6 @@ span:active {
 
 
 .keyboard {
-  border: 1px dashed white;
   display: grid;
   grid-template-columns: repeat(3, min-content);
   column-gap: 10px;
@@ -177,7 +176,6 @@ span:active {
   display: grid;
   grid-template-rows: repeat(6, var(--keyheight));
   row-gap: var(--keyrowgap);
-  border: 1px dashed white;
 }
 
 .container > div {
